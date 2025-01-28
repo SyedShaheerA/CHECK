@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <title>Animated Sunflower</title>
+  <style>
+    body {
+      /* margin: 0; */
+      height: 100vh;
+      display: flex;
+      /* justify-content: center; */
+      /* align-items: center; */
+      background: linear-gradient(to bottom, #87CEEB, #FFFAE3);
+      overflow: hidden;
+    }
+
+
+    .sunflower {
+      position: relative;
+      margin-top: 200px;
+      width: 200px;
+      height: 200px;
+      margin-left: 45%;
+      
+    }
+
+    .sunflower_petals {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      left: -200px;
+      animation: spin 10s linear infinite;
+    }
+
+    .center {
+      position: absolute;
+      top: 0%;
+      left: 10%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #8B4513, #5A2D0C);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      animation: disappear 3s;
+    }
+
+    .petal {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      transform-origin: 50% 0%;
+      animation: disappear 3s;
+    }
+
+    .stem {
+      position: absolute;
+      bottom: -20px;
+      left: 10%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 150px;
+      background: linear-gradient(to top, #006400, #32CD32);
+      border-radius: 10px;
+    }
+
+    .leaf {
+      position: absolute;
+      width: 40px;
+      height: 80px;
+      background: linear-gradient(to bottom, #32CD32, #006400);
+      border-radius: 50% 50% 0 0;
+      animation: disappear 3s;
+      transform-origin: bottom;
+    }
+
+    .leaf.left {
+      left: 10px;
+      bottom: 30px;
+      transform: rotate(-40deg);
+    }
+
+    .leaf.right {
+      right: 170px;
+      bottom: 30px;
+      transform: rotate(40deg);
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(7deg);
+      }
+      80% {
+        transform: rotate(3deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes disappear {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .bottom-text {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #6B4226;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+<!-- <div style="margin-left: 50%;">
+    <h1>
+        EMAN
+    </h1>
+</div> -->
+        <div class="sunflower" style="display: flex; justify-content: center; align-items: center; z-index: +3;">
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+            <div class="sunflower_petals" style="left: 0%;">
+            <div class="center"></div>
+            <!-- Individual Petals -->
+            <div class="petal" style="transform: rotate(0deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(20deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(40deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(60deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(80deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(100deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(120deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(140deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(160deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(180deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(200deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(220deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(240deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(260deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(280deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(300deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(320deg) translate(-50%, -100%)"></div>
+            <div class="petal" style="transform: rotate(340deg) translate(-50%, -100%)"></div>
+        </div>
+
+  
+  <!-- <div style="z-index: -2; ">
+    The girl who deserves it all -->
+    <!-- <div>
+        This IS FOR EMAN
+    </div> -->
+
+</body>
+</html>
